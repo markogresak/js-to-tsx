@@ -11,6 +11,8 @@ Usage: rename-to-tsx [option]
 
 >  *Never execute scripts unless you know what will they do!*
 
+Since this code is changing your file names and might not work correctly, **make sure to use source control or back up your work before running the script**.
+
 Explanation of the script:
 
 `find .`: find all files in current working directory (`.`) and recursive in all subfolders. Arguments:
@@ -27,8 +29,6 @@ Renaming script when using `-a`:
 Renaming script when using `-r`:
 
   - ``'mv "$1" `sed -re "s/\.js(x)?$/\.ts\1/g" <<< "$1"\`'``: Command `sed` (stream editor) is used to replace matching regex `\.js(x)?$` (`.js` or `.jsx` at end of string) with `.ts(x)`, where the `x` is only added if it existed in old extension.
-
-Since this code is changing your file names and might not work correctly, **make sure to use source control or back up your work before running the script**.
 
 
 # Contributing

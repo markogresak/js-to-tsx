@@ -30,6 +30,21 @@ Renaming script when using `-r`:
 
   - ``'mv "$1" `sed -re "s/\.js(x)?$/\.ts\1/g" <<< "$1"\`'``: Command `sed` (stream editor) is used to replace matching regex `\.js(x)?$` (`.js` or `.jsx` at end of string) with `.ts(x)`, where the `x` is only added if it existed in old extension.
 
+## As terminal commands
+
+Instead of downloading and running the script, you can copy one of the scripts below directly into the terminal.
+
+Same as `rename -a` (rename both `.js` and `.jsx` to `.tsx`):
+
+``` sh
+find . -type f \( -iname '*.js' -or -iname '*.jsx' \) -not -wholename '*node_modules*' -exec sh -c 'mv "$1" "${1%.js*}.tsx"' _ {} \;
+```
+
+Same as `rename -r` (rename `.js` and `.jsx` to `.ts` and `.tsx`, respectively):
+
+``` sh
+find . -type f \( -iname '*.js' -or -iname '*.jsx' \) -not -wholename '*node_modules*' -exec sh -c 'mv "$1" `sed -re "s/\.js(x)?$/\.ts\1/g" <<< "$1"`' _ {} \;
+```
 
 # Contributing
 

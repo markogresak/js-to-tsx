@@ -19,7 +19,7 @@ display_help () {
 # and execute script given as first argument (`$1`).
 rename_with () {
   find . -type f \( -iname '*.js' -or -iname '*.jsx' \) \
-    -not -wholename '*node_modules*' -exec sh -c "$1" _ {} \;
+    -not -wholename '*node_modules*' -exec bash -c "$1" _ {} \;
 }
 
 # Rename both .js and .jsx to .tsx.

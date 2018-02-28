@@ -1,5 +1,9 @@
 # Rename .js to .tsx
 
+**I suggest using [react-javascript-to-typescript-transform](https://github.com/lyft/react-javascript-to-typescript-transform). It's a smart tool for migrating from React with JavaScript to React with TypeScript which also maps `propTypes` to TypeScript `type`.**
+
+---
+
 This is a short script, which will rename all `.js` files to `.tsx` (TypeScript with JSX support).
 
 ```

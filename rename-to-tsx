@@ -30,7 +30,7 @@ rename_all () {
 
 # Rename both .js and .jsx to .ts and .tsx, respectively.
 rename_respectively () {
-  rename_with 'mv "$1" `sed -re "s/\.js(x)?$/\.ts\1/g" <<< "$1"`'
+  rename_with 'mv "$1" `sed -Ee "s/\.js(x)?$/\.ts\1/g" <<< "$1"`'
   exit 0
 }
 

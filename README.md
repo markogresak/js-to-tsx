@@ -47,7 +47,7 @@ find . -type f \( -iname '*.js' -or -iname '*.jsx' \) -not -wholename '*node_mod
 Same as `rename -r` (rename `.js` and `.jsx` to `.ts` and `.tsx`, respectively):
 
 ``` sh
-find . -type f \( -iname '*.js' -or -iname '*.jsx' \) -not -wholename '*node_modules*' -exec sh -c 'mv "$1" `sed -re "s/\.js(x)?$/\.ts\1/g" <<< "$1"`' _ {} \;
+find . -type f \( -iname '*.js' -or -iname '*.jsx' \) -not -wholename '*node_modules*' -exec sh -c 'mv "$1" `sed -Ee "s/\.js(x)?$/\.ts\1/g" <<< "$1"`' _ {} \;
 ```
 
 # Contributing
